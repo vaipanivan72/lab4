@@ -1,18 +1,23 @@
 #include <stdio.h>
 
 int main() {
-    int i, j;
-    long long p = 0; // сума
-    long long s;     // добуток
+    int i = 1, j;
+    long long p = 0, s;
 
-    for (i = 1; i <= 10; i++) {
+    do {
         s = 1;
-        for (j = 1; j <= i; j++) {
+        j = 1;
+
+        do {
             s *= (i + j);
-        }
+            j++;
+        } while (j <= i);
+
         p += s;
-    }
+        i++;
+    } while (i <= 10);
 
     printf("p = %lld\n", p);
     return 0;
 }
+
